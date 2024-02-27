@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>{{ markdown_content.title }}</h1>
-    <p>{{ markdown_content.content }}</p>
+    <p>{{ markdown_content.content|safe }}</p>
   </body>
 </html>
