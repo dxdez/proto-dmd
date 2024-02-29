@@ -1,3 +1,5 @@
+{% load dmd_extras %}
+
 <!doctype html>
 <html lang="en-US">
   <head>
@@ -6,6 +8,6 @@
   </head>
   <body>
     <h1>{{ markdown_content.title }}</h1>
-    <p>{{ markdown_content.content|safe }}</p>
+    <p>{{ markdown_content.content|render_markdown }}</p>
   </body>
 </html>
