@@ -1,0 +1,5 @@
+asgiref==3.7.2
+Django==5.0.2
+Markdown==3.5.2
+Pygments==2.17.2
+sqlparse==0.4.4
