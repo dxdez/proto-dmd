@@ -1,0 +1,14 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>MD - {{ content.title }}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/styles.css' %}">
+  </head>
+  <body>
+    <h1>{{ content.title }}</h1>
+    <p>{{ content.content }}</p>
+  </body>
+</html>
