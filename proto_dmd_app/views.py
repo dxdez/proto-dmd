@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import MarkdownContent
 
 def index_view(request):
@@ -8,6 +8,9 @@ def index_view(request):
         "proto_dmd_app/index_template.html",
         context=context
     )
+
+def redirect_index_view(request):
+    return redirect('/')
 
 def markdown_content_view(request, slug):
     markdown_content = get_object_or_404(MarkdownContent, slug=slug)
