@@ -1,16 +1,15 @@
 from django.test import TestCase
+from proto_dmd_app.models import MarkdownContent
 
 class TestMarkdownModelClass(TestCase):
     @classmethod
     def setUpTestData(cls):
-        print("setUpTestData: Test Data Setup Boilerplate")
+        MarkdownContent.objects.create(title="Test Page", content="This is the content of the test page", slug="test-page")
         pass
 
-    def setUp(self):
-        print("setUp: Run once for every test method to set up clean data.")
-        pass
-
-    def test_sample_method(self):
-        print("Method: Test sample test method")
-        self.assertFalse(False)
+    def test_single_markdown_model(self):
+        test_markdown = MarkdownContent.objects.get(id=1)
+        self.assertEqual(test_markdown.title, "Test Page")
+        self.assertEqual(test_markdown.content, "This is the content of the test page")
+        self.assertEqual(test_markdown.slug, "test-page")
 
