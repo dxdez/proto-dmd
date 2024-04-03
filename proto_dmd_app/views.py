@@ -2,7 +2,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import MarkdownContent
 
 def index_view(request):
-    context = {"content": {"title":"Index", "content":"This the the homepage"}}
+    markdown_records = MarkdownContent.objects.order_by('-id')[:10]
+    context = {
+        "content": {
+            "title": "Index - Main Page",
+            "markdown_list": markdown_records
+        }
+    }
     return render(
         request,
         "proto_dmd_app/index_template.html",
