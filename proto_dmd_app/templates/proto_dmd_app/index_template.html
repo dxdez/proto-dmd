@@ -2,13 +2,23 @@
 
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>MD - {{ content.title }}</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
-  </head>
-  <body>
-    <h1>{{ content.title }}</h1>
-    <p>{{ content.content }}</p>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<title>MD - {{ content.title }}</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
+	</head>
+	<body>
+		<h1>{{ content.title }}</h1>
+		<p>The homepage of our Django application serves as a gateway to the available markdown pages, offering users the ability to explore these records in both their original raw format and their published format.</p>
+		<p>This serves as a practical testing ground, enabling users to assess the presentation and functionality of the markdown pages within the application.</p>
+		<p>Through an organized display of available markdown pages, users can conveniently navigate and evaluate the content, facilitating efficient testing procedures.</p>
+		<h3>Markdown Templates</h3>
+		<ul>
+			{% for record in content.markdown_list %}
+			<li>
+				<a href="/mc/{{ record.slug }}" target="_blank">{{ record.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</body>
 </html>
