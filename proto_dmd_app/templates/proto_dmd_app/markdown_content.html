@@ -1,16 +1,17 @@
-{% load static %}
-{% load dmd_extras %}
+{% extends "base.html" %}
 
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>MD - {{ markdown_content.title }}</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/markdown.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
-  </head>
-  <body>
-    <h1>{{ markdown_content.title }}</h1>
-    <p>{{ markdown_content.content|render_markdown }}</p>
-  </body>
-</html>
+{% block imports %}
+{% load dmd_extras %}
+{% load static %}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/markdown.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
+{% endblock %}
+
+{% block title %}MD - {{ markdown_content.title }}{% endblock %}
+{% block content %}
+<h1>{{ markdown_content.title }}</h1>
+<p>{{ markdown_content.content|render_markdown }}</p>
+{% endblock %}

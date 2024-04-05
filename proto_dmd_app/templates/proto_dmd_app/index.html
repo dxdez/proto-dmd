@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}MD - {{ content.title }}{% endblock %}
+
+{% block content %}
+<div class="content-center mt-5">
+	<div class="container mx-auto">
+		<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+			<div class="col-span-2">
+				<div class="bg-gray-200 p-4">
+					<h2 class="text-xl font-bold mb-2">{{ content.title }}</h2>
+					<br/>
+					<p class="text-gray-700">
+					The homepage of our Django application serves as a gateway to the available markdown pages, offering users the ability to explore these records in both their original raw format and their published format. This serves as a practical testing ground, enabling users to assess the presentation and functionality of the markdown pages within the application.Through an organized display of available markdown pages, users can conveniently navigate and evaluate the content, facilitating efficient testing procedures.
+					</p>
+				</div>
+				<div class="bg-gray-200 p-4">
+					<a class="text-blue-600 font-bold" href="/create/">Add New Markdown</a>
+				</div>
+			</div>
+			<div class="col-span-2 md:col-span-1">
+				<div class="bg-gray-200 p-4">
+					<h3 class="text-lg font-bold mb-2">Markdown Templates</h3>
+					<ul>
+						{% for record in content.markdown_list %}
+						<li class="text-gray-700">
+							<a class="text-blue-600" href="/mc/{{ record.slug }}" target="_blank">{{ record.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

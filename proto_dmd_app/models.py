@@ -6,7 +6,7 @@ class MarkdownContent(models.Model):
     slug = models.SlugField(blank=True)
 
     class Meta:
-        verbose_name_plural = "Markdown content"
+        verbose_name_plural = 'Markdown content'
 
     def __str__(self):
         return self.title
