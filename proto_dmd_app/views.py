@@ -6,13 +6,13 @@ def index_view(request):
     markdown_records = MarkdownContent.objects.order_by('-id')[:10]
     context = {
         "content": {
-            "title": "Index - Main Page",
+            "title": "Home",
             "markdown_list": markdown_records
         }
     }
     return render(
         request,
-        "proto_dmd_app/index_template.html",
+        "proto_dmd_app/index.html",
         context=context
     )
 
