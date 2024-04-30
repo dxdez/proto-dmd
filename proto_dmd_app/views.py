@@ -39,11 +39,33 @@ def markdown_create(request):
     else:
         form = MarkdownForm
         context = {
-            'form': form
+            'form': form,
+            'operation': 'Create'
         }
         return render(
             request,
-            'proto_dmd_app/markdown_create.html',
+            'proto_dmd_app/markdown_form.html',
             context=context
         )
-        
+
+def markdown_edit(request, slug):
+    edit_markdown_content = get_object_or_404(MarkdownContent, slug=slug)
+    if request.method == 'POST':
+        form = MarkdownForm(request.POST, instance=edit_markdown_content)
+        if form.is_valid():
+            form.save()    
+            return HttpResponse('<p>Info Updated!</p>')
+        else:
+            return HttpResponse('<p>Info is not Valid</p>')
+    else:
+        form = MarkdownForm(instance=edit_markdown_content)
+        context = {
+            'form': form,
+            'operation': 'Edit'
+        }
+        return render(
+            request,
+            'proto_dmd_app/markdown_form.html',
+            context=context
+        )
+
