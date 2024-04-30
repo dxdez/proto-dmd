@@ -48,8 +48,8 @@ def markdown_create(request):
             context=context
         )
 
-def markdown_edit(request, slug):
-    edit_markdown_content = get_object_or_404(MarkdownContent, slug=slug)
+def markdown_edit(request, id):
+    edit_markdown_content = get_object_or_404(MarkdownContent, pk=id)
     if request.method == 'POST':
         form = MarkdownForm(request.POST, instance=edit_markdown_content)
         if form.is_valid():

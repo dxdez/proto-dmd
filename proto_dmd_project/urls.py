@@ -9,6 +9,6 @@ urlpatterns = [
     path("mc/", redirect_index_view, name="redirect-to-index"),
     path("mc/<slug:slug>/", markdown_content_view, name="markdown-content"),
     path("edit/", redirect_index_view, name="redirect-to-index"),
-    path("edit/<slug:slug>/", markdown_edit, name="markdown-edit"),
+    path("edit/<int:id>/", markdown_edit, name="markdown-edit"),
 ]
 
