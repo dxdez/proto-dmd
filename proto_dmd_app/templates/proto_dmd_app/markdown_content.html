@@ -6,12 +6,12 @@
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/markdown.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/markdown.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
 {% endblock %}
 
 {% block title %}MD - {{ markdown_content.title }}{% endblock %}
 {% block content %}
-<h1>{{ markdown_content.title }}</h1>
-<p>{{ markdown_content.content|render_markdown }}</p>
+	<h1>{{ markdown_content.title }}</h1>
+	<p>{{ markdown_content.content|render_markdown }}</p>
 {% endblock %}
