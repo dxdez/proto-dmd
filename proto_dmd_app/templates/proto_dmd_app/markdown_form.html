@@ -3,32 +3,32 @@
 {% block title %}Content{{ operation }}{% endblock %}
 
 {% block content %}
-	<div class="content-center mt-5">
-		<div class="container mx-auto">
-			<div class="grid grid-cols-1">
-				<div class="col-span-1">
-					<div class="bg-gray-200 p-4">
-						<h3 class="text-lg font-bold mb-2">Markdown {{ operation }}</h3>
-						<form method="POST">
-							{% csrf_token %}
-							{{ form.as_p }}
-							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
-						</form>
-						{% if form.errors %}
-							<div class="alert alert-danger">
-								<h4>Form Errors:</h4>
-								<ul>
-									{% for field, errors in form.errors.items %}
-										{% for error in errors %}
-											<li>{{ field }}: {{ error }}</li>
-										{% endfor %}
-									{% endfor %}
-								</ul>
-							</div>
-						{% endif %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="content-center mt-5">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1">
+                <div class="col-span-1">
+                    <div class="bg-gray-200 p-4">
+                        <h3 class="text-lg font-bold mb-2">Markdown {{ operation }}</h3>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+                        </form>
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                <h4>Form Errors:</h4>
+                                <ul>
+                                    {% for field, errors in form.errors.items %}
+                                        {% for error in errors %}
+                                            <li>{{ field }}: {{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
