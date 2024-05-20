@@ -3,17 +3,17 @@
 {% endblock %}
 <!doctype html>
 <html lang="en-US">
-	<head>
-		<meta charset="utf-8" />
-		<title>{% block title %}-{% endblock %}</title>
-		{% block head %}
-		<script src="https://cdn.tailwindcss.com"></script>
-		<link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
-		{% endblock %}
-	</head>
-	<body>
-		<div id="content">
-			{% block content %}{% endblock %}
-		</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}-{% endblock %}</title>
+        {% block head %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'proto_dmd_app/style.css' %}">
+        {% endblock %}
+    </head>
+    <body>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
 </html>
