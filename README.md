@@ -16,6 +16,11 @@ Execute the following command to run the application:
 docker compose up -d
 `````
 
+The application will be available on PORT 8000, in browser use the host address:port to view the application:
+`````
+<hostname>:8000
+`````
+
 Execute the following command to shutdown:
 `````
 docker compose down -v
