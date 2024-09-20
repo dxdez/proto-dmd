@@ -12,6 +12,8 @@
 
 {% block title %}MD - {{ markdown_content.title }}{% endblock %}
 {% block content %}
+    <a href="/">Home</a>
+    <br/>
     <h1>{{ markdown_content.title }}</h1>
     <p>{{ markdown_content.content|render_markdown }}</p>
 {% endblock %}
