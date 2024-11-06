@@ -1,5 +1,7 @@
 # Proto DMD - Django Markdown
 
+> **Note: This project is no longer actively maintained. It has been archived for historical purposes. Feel free to explore the code, but please note that it is no longer in use or supported.**
+
 This application is a prototype written in Django for rendering markdown files. Markdown is a plain text formatting language that can automatically convert to HTML for publishing on the Web. Due to its accessible syntax and widespread use in static site generators, productivity apps, and content management tools, it’s become a popular alternative to rich-text editors for both technical and non-technical content creators.
 
 ### Running Application in Docker
